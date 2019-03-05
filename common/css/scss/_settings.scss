@@ -1,0 +1,121 @@
+/* Scss Document */
+
+@charset "UTF-8";
+
+// ============================================
+// サイトの基本設定
+// ============================================
+
+// 幅関係の設定 ------------------------------
+
+	$width-base: 1200px; //全体
+	$width-main: 900px; //メインエリアの幅
+
+// フォント関係の設定 ------------------------------
+
+	// 日本語
+	@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+	$font-base-JP: "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	
+	// 英語 Open Sans
+	//@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+	//$font-base-EN: 'Open Sans', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	
+	// 英語 Oswald
+	//@import url('https://fonts.googleapis.com/css?family=Oswald');
+	//$font-base-EN-Oswald: 'Oswald', 'Open Sans', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	
+	// 英語　Montserrat
+	//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900');
+	//$font-base-EN-Mont: 'Montserrat', 'Open Sans', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	
+	// 英語　Roboto
+	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+	$font-base-EN-Roboto: 'Roboto', 'Open Sans', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+
+	@mixin font-size($size, $base: 16) {
+	  font-size: $size + px;
+	  font-size: ($size / $base) + rem;
+	}
+	/* 記述例
+	p {
+	  @include font-size(12);
+	}*/
+
+// 色関係の設定 ------------------------------
+
+	// サイトカラー
+	$color-main: #F25652; // 
+	$color-sub1: #C2E7F2; // light blue
+	$color-sub2: #3E4E59; // dark(font)
+	$color-sub3: #F1F0E2; // pale(bg)
+	$color-type01: #D9BB93; // light brown
+	
+	$color-type02: yellow; // 
+	$color-type03: yellow; // 
+	$color-type04: yellow; // 
+	$color-type05: yellow; // 
+	$color-type06: yellow; // 
+	$color-type07: yellow; // 
+	$color-type08: yellow; // 
+	$color-type09: yellow; // 
+	$color-type10: yellow; // 
+	
+// ブレイクポイント ------------------------------
+
+	$breakpoints: (
+		sp: "screen and (max-width: 768px)", // 768px以下(iPad縦, iPhone横)
+		pc: "screen and (min-width: 769px)", // 769px以上
+	);
+	@mixin media($breakpoint) {
+		@media #{map-get($breakpoints, $breakpoint)} {
+			@content;
+		}
+	}
+	/* 記述例
+	@include media(sp) {
+		background-color: green;
+	}*/
+
+// パス ------------------------------
+
+	$imgDir: "../img/"; //imageディレクトリ
+
+// ============================================
+// Style
+// ============================================
+
+// Common ------------------------------
+
+html {
+	font-size: 16px;
+}
+body {
+	font-family: $font-base-JP;
+	font-weight: 400;
+	color: darken($color-sub2, 20%);
+	line-height: 1.5;
+	background: lighten($color-sub3, 7%);
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+// Layout ------------------------------
+
+*,
+*::after {
+	box-sizing: border-box;
+}
+.l-inner {
+	min-width: 320px;
+	max-width: $width-base;
+	width: 100%;
+	margin: 0 auto;
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}

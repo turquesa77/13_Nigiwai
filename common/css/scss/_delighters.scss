@@ -1,0 +1,126 @@
+/* Scss Document */
+
+@mixin started {
+	&.delighter.started {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+// 左からフェードイン ---------------------------------------
+@mixin base-left {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+
+// 0.5秒
+.fade-in-left {
+	&.delighter {
+		transition: all .5s ease-out;
+		@include base-left;
+	}
+}
+.fade-in-left { @include started; }
+
+// 0.7秒
+.fade-in-left-02 {
+	&.delighter {
+		transition: all .7s ease-out;
+		@include base-left;
+	}
+}
+.fade-in-left-02 { @include started; }
+
+// 0.9秒
+.fade-in-left-03 {
+	&.delighter {
+		transition: all .9s ease-out;
+		@include base-left;
+	}
+}
+.fade-in-left-03 { @include started; }
+
+// 1.1秒
+.fade-in-left-04 {
+	&.delighter {
+		transition: all 1.1s ease-out;
+		@include base-left;
+	}
+}
+.fade-in-left-04 { @include started; }
+
+// 1.3秒
+.fade-in-left-05 {
+	&.delighter {
+		transition: all 1.3s ease-out;
+		@include base-left;
+	}
+}
+.fade-in-left-05 { @include started; }
+
+// 右からフェードイン ---------------------------------------
+@mixin base-right {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+// 0.5秒
+.fade-in-right {
+	&.delighter {
+		transition: all .5s ease-out;
+		@include base-right;
+	}
+}
+.fade-in-right { @include started; }
+
+// 0.7秒
+.fade-in-right-02 {
+	&.delighter {
+		transition: all .7s ease-out;
+		@include base-right;
+	}
+}
+.fade-in-right-02 { @include started; }
+
+// 0.9秒
+.fade-in-right-03 {
+	&.delighter {
+		transition: all .9s ease-out;
+		@include base-right;
+	}
+}
+.fade-in-right-03 { @include started; }
+
+// 1.1秒
+.fade-in-right-04 {
+	&.delighter {
+		transition: all 1.1s ease-out;
+		@include base-right;
+	}
+}
+.fade-in-right-04 { @include started; }
+
+// 1.3秒
+.fade-in-right-05 {
+	&.delighter {
+		transition: all 1.3s ease-out;
+		@include base-right;
+	}
+}
+.fade-in-right-05 { @include started; }
+
+// 下からフェードイン ---------------------------------------
+@mixin base-bottom {
+	transform: translateY(40%);
+	opacity: 0;
+}
+
+// 0.5秒
+.fade-in-bottom {
+	&.delighter {
+		transition: all .5s ease-out;
+		@include base-bottom;
+	}
+}
+.fade-in-bottom { @include started; }
+

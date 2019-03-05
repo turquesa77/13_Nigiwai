@@ -1,0 +1,95 @@
+/* Scss Document */
+
+// keyVisual ------------------------------
+.keyVisual {
+	width: 100%;
+	//height: 370px;
+	overflow: hidden;
+	position: relative;
+	&__slider {
+		img {
+			//max-width: none;
+		}
+	}
+	// テキストボックス
+	&__pop1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		color: $color-main;
+		font-weight: 800;
+		line-height: 1.3;
+		@include font-size(28);
+		background-color: rgba(white, 0.8);
+		padding: 20px;
+		@include media(sp) {
+			width: 90%;
+			br {
+				display: none;
+			}
+		}
+	}
+	// 画像
+	&__pop2 {
+		width: 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@include media(sp) {
+			width: 90%;
+		}
+		li + li {
+			margin-top: 20px;
+		}
+		a {
+			transition: all 0.3s ease;
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+// subVisual ------------------------------
+.subVisualBase {
+	height: 300px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	h2 {
+		@include font-size(46);
+		font-weight: 500;
+		color: white;
+		padding: 5px 30px;
+		text-align: center;
+		background: rgba($color-main, 0.5);
+		@include media(sp) {
+			@include font-size(30);
+		}
+		br {
+			display: none;
+			@include media(sp) {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.subVisual {
+	margin-top: 100px;
+	@include media(sp) {
+		margin-top: 45px;
+	}
+	#program & {
+		@extend .subVisualBase;
+		background: url(#{$imgDir}img05.jpg) center center /cover no-repeat $color-main;
+	}
+	#member & {
+		@extend .subVisualBase;
+		background: url(#{$imgDir}img03.jpg) center center /cover no-repeat $color-main;
+	}
+}
+
